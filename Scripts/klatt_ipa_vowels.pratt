@@ -1,0 +1,73 @@
+##Klatt synthesis of ipa vowels
+##By Daniel Lawrence Apri 2015
+##########################
+call cardinalVowels
+##########################
+procedure cardinalVowels
+call synthVowel upper_high_front 294 2343 3251 4251 
+call synthVowel lower_high_front 360 2187 2830 3830 
+call synthVowel upper_mid_front 434 2148 2763 3763 
+call synthVowel lower_mid_front 581 1840 2429 3429 
+call synthVowel upper_low_front 766 1728 2398 3398 
+call synthVowel lower_low_front 806 1632 2684 3684 
+call synthVowel lower_low_back 652 843 2011 3011 
+call synthVowel lower_mid_back 541 830 2221 3221 
+call synthVowel upper_mid_back 406 727 2090 3090 
+call synthVowel lower_high_back 334 910 2300 3300 
+call synthVowel upper_high_back 295 750 2342 3342 
+call synthVowel mid_central_unrounded 500 1500 2500 3500 
+	select Sound upper_high_front
+	plus Sound lower_high_front
+	plus Sound upper_mid_front
+	plus Sound lower_mid_front
+	plus Sound upper_low_front
+	plus Sound lower_low_front
+	plus Sound lower_low_back
+	plus Sound lower_mid_back
+	plus Sound upper_mid_back
+	plus Sound lower_high_back
+	plus Sound upper_high_back
+	plus Sound mid_central_unrounded
+	Concatenate recoverably
+	select Sound upper_high_front
+	plus Sound lower_high_front
+	plus Sound upper_mid_front
+	plus Sound lower_mid_front
+	plus Sound upper_low_front
+	plus Sound lower_low_front
+	plus Sound lower_low_back
+	plus Sound lower_mid_back
+	plus Sound upper_mid_back
+	plus Sound lower_high_back
+	plus Sound upper_high_back
+	plus Sound mid_central_unrounded
+	Remove
+	select Sound chain
+	Rename... Cardinal_vowels
+	select TextGrid chain
+	Rename... Cardinal_vowels
+	select Sound Cardinal_vowels
+	plus TextGrid Cardinal_vowels
+	View & Edit
+endproc
+##################################
+procedure synthVowel name$ .f1 .f2 .f3 .f4
+	Create KlattGrid... 'name$' 0 0.5 4 1 1 6 1 1 1
+#Add voicing amplitude, vowel formants, and pitch targets
+Add voicing amplitude point... 0.0 0
+Add voicing amplitude point... 0.04 90
+Add voicing amplitude point... 0.25 90
+Add voicing amplitude point... 0.5 90
+Add pitch point... 0.0 150
+Add pitch point... 0.45 100
+Add oral formant frequency point... 1 0.1 '.f1'
+Add oral formant frequency point... 2 0.1 '.f2'
+Add oral formant frequency point... 3 0.1 '.f3'
+Add oral formant frequency point... 4 0.1 '.f4'
+Add oral formant bandwidth point... 1 0.1 70
+Add oral formant bandwidth point... 2 0.1 120
+Add oral formant bandwidth point... 3 0.1 200
+Add oral formant bandwidth point... 4 0.1 300
+To Sound
+endproc
+#####################################

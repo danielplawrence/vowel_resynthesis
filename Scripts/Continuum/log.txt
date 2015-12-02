@@ -1,0 +1,40 @@
+Date:Wed May  6 17:01:41 2015
+Morph duration:1
+Modify F1:1
+Modify F2:1
+Modify F3:0
+Modify F4:0
+Modify F5:0
+Simulate lip radition:1
+Bandwidth estimation:Normal
+Speaker sex:Male
+Interpolation method:Bark
+Reference F1:550
+Reference F1:1650
+Reference F1:2750
+Reference F1:3850
+Reference F1:4950
+Filter cutoff:3500
+Filter crossover:1000
+Number of steps:6
+Crossfade overlap:0.07
+Source segment start:1.2295855069000035
+Source segment end:1.9451231510972176
+Source segment duration:0.7155376441972141
+Target segment start:1.230609375
+Target segment end:2.0139623397435895
+Target segment duration:0.7833529647435895
+Preceding context source:3
+Following context source:3
+Preceding context start:0
+Preceding context end:0
+Preceding context duration:0.95
+Following context start:0
+Following context end:0
+Following context duration:0.95
+Duration token 1 0.7155376441972141
+Duration token 2 0.7291007083064892
+Duration token 3 0.7426637724157643
+Duration token 4 0.7562268365250393
+Duration token 5 0.7697899006343144
+Duration token 6 0.7833529647435895
